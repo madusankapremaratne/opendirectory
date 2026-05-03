@@ -76,6 +76,7 @@ OpenDirectory is a central library that allows you to add new capabilities, or s
 | [`twitter-GTM-find-skill`](skills/twitter-GTM-find-skill) | End-to-end pipeline for scraping Twitter for GTM/DevRel tech startup jobs using Apify, and validating them against an Ideal Customer Profile (ICP)... | `0.0.1` |
 | [`vc-curated-match`](skills/vc-curated-match) | Accepts a product description and URL to algorithmically identify relevant Venture Capital investors targeting exactly that stage, industry, and ni... | `1.0.0` |
 | [`vc-finder`](skills/vc-finder) | Takes a startup product URL or description, detects the industry and funding stage, identifies 5 comparable funded companies, searches who invested... | `0.0.1` |
+| [`vid-motion-graphics`](skills/vid-motion-graphics) | Generates motion graphics videos (MP4) from a content brief. | `1.0.0` |
 | [`where-your-customer-lives`](skills/where-your-customer-lives) | Given a product utility and ICP, researches the internet to find the specific channels. | `0.0.1` |
 | [`yc-intent-radar-skill`](skills/yc-intent-radar-skill) | Scrape daily job listings from YCombinator's Workatastartup platform without duplicates. | `0.0.1` |
 
