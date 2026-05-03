@@ -2,6 +2,8 @@
 
 Generates multi-scene motion graphics as MP4 from a content brief. HTML/CSS animations rendered frame-by-frame in headless Chromium via Playwright, assembled with FFmpeg. No React, no AI APIs, no Python.
 
+<img width="1920" height="1072" alt="vid-motion-graphics-cover-image" src="https://github.com/user-attachments/assets/51d085a4-9216-4da5-948c-82ed7e5e0818" />
+
 ## Install
 
 ```bash
