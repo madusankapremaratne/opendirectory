@@ -10,6 +10,10 @@ on:
       - 'scripts/**'
       - 'registry.json'
 
+concurrency:
+  group: publish-${{ github.ref }}
+  cancel-in-progress: false
+
 permissions:
   contents: write
 
@@ -34,6 +38,9 @@ jobs:
 
       - name: Install dependencies
         run: pnpm install
+
+      - name: Validate skill descriptions
+        run: pnpm exec tsx scripts/validate-skill-descriptions.ts
 
       - name: Build registry
         run: pnpm exec tsx scripts/build-registry.ts

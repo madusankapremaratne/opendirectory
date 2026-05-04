@@ -5,9 +5,14 @@ on:
     branches:
       - main
 
+concurrency:
+  group: pr-validation-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -26,6 +31,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Validate skill descriptions
+        run: pnpm exec tsx scripts/validate-skill-descriptions.ts
+
       - name: Validate skills structure
         run: pnpm exec tsx scripts/validate-pr.ts
 
@@ -36,5 +44,5 @@ jobs:
         run: cd packages/cli && pnpm run build
 
       - name: Run E2E tests
+        timeout-minutes: 10
         run: cd packages/cli && pnpm run test:e2e
-

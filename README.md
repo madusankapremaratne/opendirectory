@@ -5,12 +5,18 @@
 <br />
 
 <div align="center">
-  <strong>A curated registry and CLI for AI Agent Skills, meticulously designed for Go-To-Market (GTM), Technical Marketing, and growth automation.</strong>
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=3000&pause=800&color=58A6FF&center=true&vCenter=true&width=620&height=50&lines=51+pre-built+AI+Agent+Skills;Works+with+Claude%2C+Codex%2C+Gemini+CLI;GTM+%7C+Marketing+%7C+Growth+Automation;Install+in+seconds.+No+setup+required." alt="Typing SVG" />
 </div>
+
+<br />
 
 <div align="center">
 
 [![npm version](https://img.shields.io/npm/v/@opendirectory.dev/skills.svg?style=flat-square)](https://www.npmjs.com/package/@opendirectory.dev/skills)
+[![Skills](https://img.shields.io/badge/skills-51-blue.svg?style=flat-square)](skills/)
+[![Stars](https://img.shields.io/github/stars/Varnan-Tech/opendirectory?style=flat-square&color=yellow)](https://github.com/Varnan-Tech/opendirectory/stargazers)
+[![Contributors](https://img.shields.io/github/contributors/Varnan-Tech/opendirectory?style=flat-square&color=orange)](https://github.com/Varnan-Tech/opendirectory/graphs/contributors)
+[![Agents](https://img.shields.io/badge/agents-7-blueviolet.svg?style=flat-square)](#quick-start)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
@@ -20,164 +26,509 @@
 
 ## What is OpenDirectory?
 
-OpenDirectory is a central library that allows you to add new capabilities, or superpowers, to your AI agents. Instead of teaching your AI how to perform complex marketing or growth tasks from scratch, you can simply download a pre-built skill from our catalog and install it directly into your project.
+OpenDirectory is a central library of AI Agent Skills. Each skill is a pre-built set of instructions and context you install directly into your AI agent. Install a skill and your agent gains expert-level domain knowledge for complex GTM, marketing, and growth tasks.
 
-## Available Skills
+<br>
 
-<!-- SKILLS_LIST_START -->
+<table>
+  <tr>
+    <td align="center" width="33%">
+      <b>1. Browse</b><br><br>
+      <pre>npx "@opendirectory.dev/skills" list</pre>
+      <sub>View all 51 skills</sub>
+    </td>
+    <td align="center" width="33%">
+      <b>2. Pick your agent</b><br><br>
+      <pre>--target claude</pre>
+      <sub>7 agents supported</sub>
+    </td>
+    <td align="center" width="33%">
+      <b>3. Install</b><br><br>
+      <pre>npx "@opendirectory.dev/skills" install &lt;skill&gt; --target claude</pre>
+      <sub>Instant domain expertise</sub>
+    </td>
+  </tr>
+</table>
 
-| Skill Name | Description | Version |
-|---|---|---|
-| [`blog-cover-image-cli`](skills/blog-cover-image-cli) | Use when the user asks to generate a blog cover image, thumbnail, or article header. | `1.0.17` |
-| [`brand-alchemy`](skills/brand-alchemy) | World-class brand strategist and naming expert. | `0.0.1` |
-| [`claude-md-generator`](skills/claude-md-generator) | Use when the user asks to generate or update a project's CLAUDE or AGENTS context file from a codebase scan. | `1.0.0` |
-| [`cold-email-verifier`](skills/cold-email-verifier) | Use when the user wants to verify cold emails, enrich a lead list, or autonomously guess email addresses from a CSV using ValidEmail. | `0.0.1` |
-| [`competitor-pr-finder`](skills/competitor-pr-finder) | Give it your product URL or description. | `0.0.1` |
-| [`cook-the-blog`](skills/cook-the-blog) | Generate high-converting, deep-dive growth case studies in MDX format. | `1.0.0` |
-| [`dependency-update-bot`](skills/dependency-update-bot) | Scans your project for outdated npm, pip, Cargo, Go, or Ruby packages. | `1.0.0` |
-| [`docs-from-code`](skills/docs-from-code) | Generates and updates README. | `1.0.0` |
-| [`email-newsletter`](skills/email-newsletter) | Drafts and designs a complete HTML email newsletter from a topic or content brief. | `1.0.0` |
-| [`explain-this-pr`](skills/explain-this-pr) | Takes a GitHub PR URL or the current branch and writes a plain-English explanation of what it does and why, then posts it as a PR comment. | `1.0.0` |
-| [`gh-issue-to-demand-signal`](skills/gh-issue-to-demand-signal) | Takes a competitor's public GitHub repo URL, fetches their open issues via the GitHub REST API, filters noise locally, clusters issues into 6 deman... | `0.0.1` |
-| [`google-trends-api-skills`](skills/google-trends-api-skills) | SEO keyword research workflow for blog generation using Google Trends data. | `2.0` |
-| [`graphic-case-study`](skills/graphic-case-study) | Generates a professionally designed case study PDF for B2B SaaS sales and marketing. | `1.0.0` |
-| [`graphic-chart`](skills/graphic-chart) | Generates data visualization charts (bar, line, area, pie, doughnut, scatter, radar, treemap) as PNG using Apache ECharts v6. | `2.0.0` |
-| [`graphic-ebook`](skills/graphic-ebook) | Creates professionally designed B2B SaaS e-books in HTML + CSS, exported as print-ready PDF. | `1.0.0` |
-| [`graphic-gif`](skills/graphic-gif) | Creates animated looping GIFs from CSS animations (default) or AI image-to-video. | `1.0.0` |
-| [`graphic-slide-deck`](skills/graphic-slide-deck) | Generates a professionally designed HTML slide deck from a brief or content. | `1.0.0` |
-| [`hackernews-intel`](skills/hackernews-intel) | Monitors Hacker News for user-configured keywords, deduplicates against a local SQLite cache, and sends Slack alerts for new matching posts. | `1.0.0` |
-| [`human-tone`](skills/human-tone) | Rewrites AI-generated marketing copy to sound naturally human. | `1.0.0` |
-| [`kill-the-standup`](skills/kill-the-standup) | Reads yesterday's Linear issues and GitHub commits for the authenticated user, formats a standup update (done / doing / blockers), and posts it to... | `1.0.0` |
-| [`linkedin-job-post-to-buyer-pain-map`](skills/linkedin-job-post-to-buyer-pain-map) | Takes pasted LinkedIn job posts or hiring descriptions and converts them into a structured buyer pain map with inferred pains, capability gaps, buy... | `1.0.0` |
-| [`linkedin-post-generator`](skills/linkedin-post-generator) | Converts any content, blog post URL, pasted article, GitHub PR description, or a description of something built, into a formatted LinkedIn post wit... | `1.0.0` |
-| [`llms-txt-generator`](skills/llms-txt-generator) | Generates and maintains a standards-compliant llms. | `1.0.0` |
-| [`map-your-market`](skills/map-your-market) | Given a product description, category keywords, or competitor names (any combination), searches Reddit, Hacker News, GitHub Issues, G2, and Google... | `0.0.1` |
-| [`meeting-brief-generator`](skills/meeting-brief-generator) | Takes a company name and optional contact, runs targeted research via Tavily, synthesizes a 1-page pre-call brief with Gemini, and optionally saves... | `1.0.0` |
-| [`meta-ads-skill`](skills/meta-ads-skill) | Use when interacting with the Meta Ads CLI to manage accounts, campaigns, ads, and insights. Act as an Expert Media Buyer. | `0.0.1` |
-| [`meta-tribeV2-skill`](skills/meta-tribeV2-skill) | Analyzes video hooks and scripts using Meta's TRIBE v2 fMRI model, providing a neuro-marketing breakdown of scroll-stopping power and retention risk. | `1.0.0` |
-| [`newsletter-digest`](skills/newsletter-digest) | Aggregates RSS feeds from the past week, synthesizes the top stories using Gemini, and publishes a newsletter digest to Ghost CMS. | `1.0.0` |
-| [`noise-to-linkedin-carousel`](skills/noise-to-linkedin-carousel) | Transforms messy, unstructured source material (transcripts, rough notes, etc. | `1.0.0` |
-| [`noise2blog`](skills/noise2blog) | Turns rough notes, bullet points, voice transcripts, or tweet dumps into a polished, publication-ready blog post. | `1.0.0` |
-| [`npm-downloads-to-leads`](skills/npm-downloads-to-leads) | Takes a list of npm package names (yours or competitors'), fetches 12 weeks of daily download data from the npm API, computes a breakout velocity s... | `0.0.1` |
-| [`oss-launch-kit`](skills/oss-launch-kit) | Higher-level OSS launch orchestrator that analyzes repos, selects channels, and coordinates launch plans. | `0.2.0` |
-| [`outreach-sequence-builder`](skills/outreach-sequence-builder) | Takes a buying signal and generates a personalized multi-channel outreach sequence across email, LinkedIn, and phone. | `1.0.0` |
-| [`position-me`](skills/position-me) | Elite Website Reviewer Agent for AEO, GEO, SEO, UI/UX Psychology, and Copywriting. | `0.0.1` |
-| [`pr-description-writer`](skills/pr-description-writer) | Use when the user asks to write, draft, generate, or update a GitHub pull request description for the current branch. | `1.0.0` |
-| [`pricing-finder`](skills/pricing-finder) | Tell it what your product is (URL or description) and it finds 5 competitors globally, fetches their actual pricing pages, extracts every tier and... | `0.0.1` |
-| [`pricing-page-psychology-audit`](skills/pricing-page-psychology-audit) | Audits any SaaS pricing page URL against 12 pricing psychology principles and outputs a ranked improvement report with specific rewrite suggestions... | `1.0.0` |
-| [`product-update-logger`](skills/product-update-logger) | Tell the skill what your product shipped. | `0.0.1` |
-| [`producthunt-launch-kit`](skills/producthunt-launch-kit) | Use when the user asks to prepare a Product Hunt launch or generate Product Hunt listing assets. | `1.0.0` |
-| [`reddit-icp-monitor`](skills/reddit-icp-monitor) | Watches subreddits for people describing the exact problem you solve, scores their relevance to your ICP, and drafts a helpful non-spammy reply for... | `1.0.0` |
-| [`reddit-post-engine`](skills/reddit-post-engine) | Writes and optionally posts a Reddit post for any subreddit, following that subreddit's specific culture and rules. | `1.0.0` |
-| [`schema-markup-generator`](skills/schema-markup-generator) | Use when the user asks to generate JSON-LD or structured data markup for a webpage. | `1.0.0` |
-| [`sdk-adoption-tracker`](skills/sdk-adoption-tracker) | Given your SDK or library name, searches GitHub code search for public repos that import or require it, classifies each repo as company org, affili... | `0.0.1` |
-| [`show-hn-writer`](skills/show-hn-writer) | Draft a Show HN post backed by real HN performance data. Uses observed patterns from 250 top HN posts to maximise score. | `2.0.0` |
-| [`tweet-thread-from-blog`](skills/tweet-thread-from-blog) | Converts a blog post URL or article into a Twitter/X thread with a strong hook, one insight per tweet, and a CTA. | `1.0.0` |
-| [`twitter-GTM-find-skill`](skills/twitter-GTM-find-skill) | End-to-end pipeline for scraping Twitter for GTM/DevRel tech startup jobs using Apify, and validating them against an Ideal Customer Profile (ICP)... | `0.0.1` |
-| [`vc-curated-match`](skills/vc-curated-match) | Accepts a product description and URL to algorithmically identify relevant Venture Capital investors targeting exactly that stage, industry, and ni... | `1.0.0` |
-| [`vc-finder`](skills/vc-finder) | Takes a startup product URL or description, detects the industry and funding stage, identifies 5 comparable funded companies, searches who invested... | `0.0.1` |
-| [`vid-motion-graphics`](skills/vid-motion-graphics) | Generates motion graphics videos (MP4) from a content brief. | `1.0.0` |
-| [`where-your-customer-lives`](skills/where-your-customer-lives) | Given a product utility and ICP, researches the internet to find the specific channels. | `0.0.1` |
-| [`yc-intent-radar-skill`](skills/yc-intent-radar-skill) | Scrape daily job listings from YCombinator's Workatastartup platform without duplicates. | `0.0.1` |
+---
 
-<!-- SKILLS_LIST_END -->
+## Popular Agent Skills
 
-## Prerequisites
+<div align="center"><sub>Ranked by artifact quality and practical value. Install any skill in under 30 seconds.</sub></div>
 
-Before you begin, you must have Node.js installed on your computer. Node.js provides the necessary tools to download and run these skills.
+<br>
 
-1. Visit [nodejs.org](https://nodejs.org/).
-2. Download and install the version labeled Recommended For Most Users.
-3. Once installed, you will have access to a tool called terminal or command prompt on your computer, which you will use for the following steps.
+<table>
+  <tr>
+    <td valign="top" width="50%">
+      <a href="skills/blog-cover-image-cli"><b>blog-cover-image-cli</b></a> &nbsp;<code>PNG</code> &nbsp;<sub>v1.0.17</sub>
+      <hr>
+      1200×630px blog cover with self-healing QA loop, retries up to 3× with vision feedback.
+    </td>
+    <td valign="top" width="50%">
+      <a href="skills/human-tone"><b>human-tone</b></a> &nbsp;<code>Copy Rewrite</code> &nbsp;<sub>v1.0.0</sub>
+      <hr>
+      Rewrites AI marketing copy against 18 GTM slop patterns with before/after audit notes.
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <a href="skills/show-hn-writer"><b>show-hn-writer</b></a> &nbsp;<code>HN Post</code> &nbsp;<sub>v2.0.0</sub>
+      <hr>
+      Show HN post built from patterns observed in 250 top-performing posts.
+    </td>
+    <td valign="top">
+      <a href="skills/hackernews-intel"><b>hackernews-intel</b></a> &nbsp;<code>Slack Alerts</code> &nbsp;<sub>v1.0.0</sub>
+      <hr>
+      HN keyword monitor with SQLite deduplication and Slack alerts for new matching posts.
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <a href="skills/cook-the-blog"><b>cook-the-blog</b></a> &nbsp;<code>MDX + Deploy</code> &nbsp;<sub>v1.0.0</sub>
+      <hr>
+      MDX post + cover image + GitHub push in one run: research, write, deploy.
+    </td>
+    <td valign="top">
+      <a href="skills/vid-motion-graphics"><b>vid-motion-graphics</b></a> &nbsp;<code>MP4</code> &nbsp;<sub>v1.0.0</sub>
+      <hr>
+      H.264 MP4 motion graphic from a content brief. HTML/CSS → Playwright → FFmpeg, no React, no AI APIs.
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <a href="skills/graphic-ebook"><b>graphic-ebook</b></a> &nbsp;<code>PDF</code> &nbsp;<sub>v1.0.0</sub>
+      <hr>
+      Print-ready PDF ebook, 9 visual styles, 11 page layouts.
+    </td>
+    <td valign="top">
+      <a href="skills/graphic-gif"><b>graphic-gif</b></a> &nbsp;<code>GIF</code> &nbsp;<sub>v1.0.0</sub>
+      <hr>
+      Animated looping GIF, 6 animation types, 4 style presets.
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <a href="skills/graphic-slide-deck"><b>graphic-slide-deck</b></a> &nbsp;<code>HTML Deck</code> &nbsp;<sub>v1.0.0</sub>
+      <hr>
+      HTML slide deck from a content brief, 5 design presets.
+    </td>
+    <td valign="top">
+      <a href="skills/graphic-case-study"><b>graphic-case-study</b></a> &nbsp;<code>PDF</code> &nbsp;<sub>v1.0.0</sub>
+      <hr>
+      PDF case study for B2B SaaS sales and marketing.
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <a href="skills/graphic-chart"><b>graphic-chart</b></a> &nbsp;<code>PNG</code> &nbsp;<sub>v2.0.0</sub>
+      <hr>
+      4K retina PNG charts: bar, line, pie, scatter, radar, treemap, area, doughnut.
+    </td>
+    <td valign="top">
+      <a href="skills/email-newsletter"><b>email-newsletter</b></a> &nbsp;<code>HTML Email</code> &nbsp;<sub>v1.0.0</sub>
+      <hr>
+      Outlook-compatible HTML email with platform-specific variable injection for Loops, Mailchimp, Beehiiv, Resend.
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <a href="skills/npm-downloads-to-leads"><b>npm-downloads-to-leads</b></a> &nbsp;<code>Lead Report</code> &nbsp;<sub>v0.0.1</sub>
+      <hr>
+      Velocity scoring on npm download data surfaces breakout maintainers with personalized outreach briefs.
+    </td>
+    <td valign="top">
+      <a href="skills/producthunt-launch-kit"><b>producthunt-launch-kit</b></a> &nbsp;<code>Launch Kit</code> &nbsp;<sub>v1.0.0</sub>
+      <hr>
+      Product Hunt launch assets: taglines, listing copy, maker comment, launch emails, hour-by-hour timeline.
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <a href="skills/kill-the-standup"><b>kill-the-standup</b></a> &nbsp;<code>Slack Post</code> &nbsp;<sub>v1.0.0</sub>
+      <hr>
+      Daily standup from Linear issues and GitHub commits, posted to Slack.
+    </td>
+    <td valign="top"></td>
+  </tr>
+</table>
 
-## Installation (Zero-Install Required)
+---
 
-Because we use `npx`, there is no need to install the OpenDirectory tool itself. `npx` is a magic command that comes with Node.js. When you type `npx "@opendirectory.dev/skills"`, your computer automatically downloads the registry in the background and runs it instantly.
+## Quick Start
 
-## Native Installation (Claude Code Only)
+**1. View available skills:**
+```bash
+npx "@opendirectory.dev/skills" list
+```
 
-Users who exclusively use Anthropic's Claude Code can add OpenDirectory as a native community marketplace directly inside their Claude interface. This allows you to install skills using Claude's built-in plugin system.
+**2. Pick your agent:**
 
-Run the following commands inside your Claude Code terminal:
+| Agent | Flag |
+|---|---|
+| Claude Code | `--target claude` |
+| OpenCode | `--target opencode` |
+| Codex | `--target codex` |
+| Gemini CLI | `--target gemini` |
+| Anti-Gravity | `--target anti-gravity` |
+| OpenClaw | `--target openclaw` |
+| Hermes | `--target hermes` |
+
+**3. Install a skill:**
+```bash
+npx "@opendirectory.dev/skills" install <skill-name> --target <your-agent>
+```
+
+> **Requires Node.js.** Download from [nodejs.org](https://nodejs.org/) if not installed. `npx` fetches and runs the latest version automatically; no global install needed.
+
+<br>
+
+
+```bash
+npx "@opendirectory.dev/skills" install show-hn-writer --target claude
+```
+<div align="center">
+
+<sub>Replace <code>show-hn-writer</code> with any skill name. Replace <code>claude</code> with your agent.</sub>
+
+</div>
+
+---
+
+## Installation
+
+### Option A: npx CLI (Recommended)
+
+No global install. Always runs the latest version.
+
+```bash
+npx "@opendirectory.dev/skills" install <skill-name> --target claude
+```
+
+### Option B: Claude Desktop App
+
+https://github.com/user-attachments/assets/cea8b565-2002-4a87-8857-d902bfcfdc1c
+
+**Step 1: Download the skill**
+
+1. Copy the skill folder URL from this GitHub repo.
+2. Go to [download-directory.github.io](https://download-directory.github.io/).
+3. Paste the URL and press **Enter** to download the ZIP.
+
+**Step 2: Install in Claude**
+
+1. Open your **Claude desktop app**.
+2. Go to the sidebar and click **Customize**.
+3. Click the **Skills** tab, then click the **+** button.
+4. Choose **Upload a skill** and drag in the `.zip` file or the extracted folder.
+
+For some skills, the `SKILL.md` file sits inside a subfolder. Always upload the specific folder containing `SKILL.md`.
+
+### Option C: Claude Code Native
+
+Run these commands inside Claude Code:
 
 ```bash
 # Add the OpenDirectory marketplace
 /plugin marketplace add Varnan-Tech/opendirectory
 
-# Install a skill directly
+# Install a skill
 /plugin install opendirectory-gtm-skills@opendirectory-marketplace
 ```
 
-## Installation in Claude Desktop App
+---
 
-### Video Tutorial
-Watch this quick video to see how it's done:
+## All Skills
 
-https://github.com/user-attachments/assets/cea8b565-2002-4a87-8857-d902bfcfdc1c
+51 skills across GTM, growth automation, technical marketing, and developer tooling.
 
-### Step 1: Download the skill from GitHub
-1. Copy the URL of this specific skill folder from your browser's address bar.
-2. Go to [download-directory.github.io](https://download-directory.github.io/).
-3. Paste the URL and click **Enter** to download.
+<!-- SKILLS_LIST_START -->
 
-### Step 2: Install the Skill in Claude
-1. Open your **Claude desktop app**.
-2. Go to the sidebar on the left side and click on the **Customize** section.
-3. Click on the **Skills** tab, then click on the **+** (plus) icon button to create a new skill.
-4. Choose the option to **Upload a skill**, and drag and drop the `.zip` file (or you can extract it and drop the folder, both work).
+<table>
+  <tr><th colspan="3" align="left">Visual &amp; Media</th></tr>
+  <tr><th>Skill</th><th>Description</th><th>Version</th></tr>
+  <tr>
+    <td><a href="skills/blog-cover-image-cli"><code>blog-cover-image-cli</code></a></td>
+    <td>1200×630px blog cover image with self-healing QA loop, retries up to 3× with vision feedback.</td>
+    <td><code>1.0.17</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/graphic-chart"><code>graphic-chart</code></a></td>
+    <td>Data visualization charts as PNG — bar, line, area, pie, doughnut, scatter, radar, treemap. Apache ECharts v6.</td>
+    <td><code>2.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/graphic-case-study"><code>graphic-case-study</code></a></td>
+    <td>Professionally designed case study PDF for B2B SaaS sales and marketing.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/graphic-ebook"><code>graphic-ebook</code></a></td>
+    <td>Professionally designed B2B SaaS e-books in HTML + CSS, exported as print-ready PDF.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/graphic-gif"><code>graphic-gif</code></a></td>
+    <td>Animated looping GIFs from CSS animations or AI image-to-video. 6 animation types, 4 style presets.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/graphic-slide-deck"><code>graphic-slide-deck</code></a></td>
+    <td>Professionally designed HTML slide deck from a brief or content. 5 design presets.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/vid-motion-graphics"><code>vid-motion-graphics</code></a></td>
+    <td>Motion graphics MP4 from a content brief. HTML/CSS to Playwright to FFmpeg, no React, no AI APIs.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr><th colspan="3" align="left">Content</th></tr>
+  <tr><th>Skill</th><th>Description</th><th>Version</th></tr>
+  <tr>
+    <td><a href="skills/cook-the-blog"><code>cook-the-blog</code></a></td>
+    <td>MDX post, cover image, and GitHub push in one run: research, write, deploy.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/email-newsletter"><code>email-newsletter</code></a></td>
+    <td>Complete HTML email newsletter from a topic or brief. Outlook-compatible with variable injection for Loops, Mailchimp, Beehiiv, and Resend.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/human-tone"><code>human-tone</code></a></td>
+    <td>Rewrites AI-generated marketing copy to sound naturally human using 18 GTM slop detection patterns.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/linkedin-post-generator"><code>linkedin-post-generator</code></a></td>
+    <td>Generates LinkedIn posts from any content source. Applies LinkedIn content patterns for hook, story arc, and formatting.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/newsletter-digest"><code>newsletter-digest</code></a></td>
+    <td>Aggregates RSS feeds from the past week, synthesizes top stories using Gemini, and publishes a newsletter digest to Ghost CMS.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/noise-to-linkedin-carousel"><code>noise-to-linkedin-carousel</code></a></td>
+    <td>Turns rough notes, transcripts, and idea dumps into a LinkedIn carousel with a strong hook, clear slide structure, and a CTA.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/noise2blog"><code>noise2blog</code></a></td>
+    <td>Turns rough notes, bullet points, voice transcripts, or tweet dumps into a polished, publication-ready blog post.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/tweet-thread-from-blog"><code>tweet-thread-from-blog</code></a></td>
+    <td>Converts a blog post URL or article into a Twitter/X thread with a strong hook, one insight per tweet, and a CTA.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr><th colspan="3" align="left">Launch</th></tr>
+  <tr><th>Skill</th><th>Description</th><th>Version</th></tr>
+  <tr>
+    <td><a href="skills/brand-alchemy"><code>brand-alchemy</code></a></td>
+    <td>World-class brand strategist and naming expert for positioning, naming, and brand identity work.</td>
+    <td><code>0.0.1</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/oss-launch-kit"><code>oss-launch-kit</code></a></td>
+    <td>OSS launch orchestrator that analyzes repos, selects channels, and coordinates full launch plans.</td>
+    <td><code>0.2.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/product-update-logger"><code>product-update-logger</code></a></td>
+    <td>Logs product updates and formats them for changelogs, social posts, and internal documentation.</td>
+    <td><code>0.0.1</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/producthunt-launch-kit"><code>producthunt-launch-kit</code></a></td>
+    <td>Product Hunt launch assets: taglines, listing copy, maker comment, launch emails, and an hour-by-hour timeline.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/show-hn-writer"><code>show-hn-writer</code></a></td>
+    <td>Draft a Show HN post backed by real HN performance data. Patterns from 250 top-performing posts.</td>
+    <td><code>2.0.0</code></td>
+  </tr>
+  <tr><th colspan="3" align="left">GTM Intelligence</th></tr>
+  <tr><th>Skill</th><th>Description</th><th>Version</th></tr>
+  <tr>
+    <td><a href="skills/competitor-pr-finder"><code>competitor-pr-finder</code></a></td>
+    <td>Finds press mentions, podcast appearances, and community posts across competitors. Returns journalist names, angles, and ready-to-send cold pitches.</td>
+    <td><code>0.0.1</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/gh-issue-to-demand-signal"><code>gh-issue-to-demand-signal</code></a></td>
+    <td>Clusters competitor GitHub issues into 6 demand categories, scores by engagement, and outputs a ranked demand gap report with a GTM messaging brief.</td>
+    <td><code>0.0.1</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/google-trends-api-skills"><code>google-trends-api-skills</code></a></td>
+    <td>SEO keyword research workflow for blog generation using Google Trends data.</td>
+    <td><code>2.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/hackernews-intel"><code>hackernews-intel</code></a></td>
+    <td>Monitors Hacker News for configured keywords, deduplicates against a local SQLite cache, and sends Slack alerts for new matching posts.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/map-your-market"><code>map-your-market</code></a></td>
+    <td>Searches Reddit, HN, GitHub Issues, G2, and Google Trends for pain signals, then builds a complete positioning framework with ICP profile and messaging.</td>
+    <td><code>0.0.1</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/meta-ads-skill"><code>meta-ads-skill</code></a></td>
+    <td>Meta Ads CLI interface for managing accounts, campaigns, ads, and insights as an Expert Media Buyer.</td>
+    <td><code>0.0.1</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/meta-tribeV2-skill"><code>meta-tribeV2-skill</code></a></td>
+    <td>Analyzes video hooks and scripts using Meta's TRIBE v2 fMRI model for neuro-marketing scroll-stopping power analysis.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/npm-downloads-to-leads"><code>npm-downloads-to-leads</code></a></td>
+    <td>Velocity scoring on npm download data surfaces breakout maintainers with personalized outreach briefs.</td>
+    <td><code>0.0.1</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/reddit-icp-monitor"><code>reddit-icp-monitor</code></a></td>
+    <td>Watches subreddits for people describing the exact problem you solve, scores ICP relevance, and drafts helpful non-spammy replies.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/reddit-post-engine"><code>reddit-post-engine</code></a></td>
+    <td>Writes and optionally posts a Reddit post for any subreddit following that subreddit's culture and rules.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/sdk-adoption-tracker"><code>sdk-adoption-tracker</code></a></td>
+    <td>Searches GitHub for repos that import your SDK, scores by company signal and activity, and outputs a ranked adoption report.</td>
+    <td><code>0.0.1</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/twitter-GTM-find-skill"><code>twitter-GTM-find-skill</code></a></td>
+    <td>End-to-end pipeline scraping Twitter for GTM and DevRel tech startup jobs using Apify, validated against an ICP definition.</td>
+    <td><code>0.0.1</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/yc-intent-radar-skill"><code>yc-intent-radar-skill</code></a></td>
+    <td>Scrapes daily job listings from YCombinator's Workatastartup platform without duplicates.</td>
+    <td><code>0.0.1</code></td>
+  </tr>
+  <tr><th colspan="3" align="left">Outreach</th></tr>
+  <tr><th>Skill</th><th>Description</th><th>Version</th></tr>
+  <tr>
+    <td><a href="skills/cold-email-verifier"><code>cold-email-verifier</code></a></td>
+    <td>Verifies cold emails, enriches lead lists, and autonomously guesses email addresses from a CSV using ValidEmail.</td>
+    <td><code>0.0.1</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/outreach-sequence-builder"><code>outreach-sequence-builder</code></a></td>
+    <td>Takes a buying signal and generates a personalized multi-channel outreach sequence across email, LinkedIn, and phone.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr><th colspan="3" align="left">Research</th></tr>
+  <tr><th>Skill</th><th>Description</th><th>Version</th></tr>
+  <tr>
+    <td><a href="skills/linkedin-job-post-to-buyer-pain-map"><code>linkedin-job-post-to-buyer-pain-map</code></a></td>
+    <td>Turns LinkedIn job posts into actionable buyer pain maps with signal strength, urgency, and outreach angles.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/meeting-brief-generator"><code>meeting-brief-generator</code></a></td>
+    <td>Runs targeted research via Tavily and synthesizes a 1-page pre-call brief with Gemini for any company or contact.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/position-me"><code>position-me</code></a></td>
+    <td>Elite Website Reviewer for AEO, GEO, SEO, UI/UX Psychology, and Copywriting with specific improvement recommendations.</td>
+    <td><code>0.0.1</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/pricing-finder"><code>pricing-finder</code></a></td>
+    <td>Finds 5 competitors globally, fetches their pricing pages, and returns a complete pricing intelligence report with model analysis and recommended strategy.</td>
+    <td><code>0.0.1</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/pricing-page-psychology-audit"><code>pricing-page-psychology-audit</code></a></td>
+    <td>Audits any SaaS pricing page against 12 pricing psychology principles with scores, specific rewrites, and ranked improvement suggestions.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/vc-curated-match"><code>vc-curated-match</code></a></td>
+    <td>Matches your product to a curated dataset of top global VC firms based on industry tags, stage, and geography.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/vc-finder"><code>vc-finder</code></a></td>
+    <td>Detects industry and funding stage, identifies comparable funded companies, and finds best-fit investors for your startup.</td>
+    <td><code>0.0.1</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/where-your-customer-lives"><code>where-your-customer-lives</code></a></td>
+    <td>Researches the internet to find the specific channels where your ICP talks, complains, and makes decisions.</td>
+    <td><code>0.0.1</code></td>
+  </tr>
+  <tr><th colspan="3" align="left">Developer Tools</th></tr>
+  <tr><th>Skill</th><th>Description</th><th>Version</th></tr>
+  <tr>
+    <td><a href="skills/claude-md-generator"><code>claude-md-generator</code></a></td>
+    <td>Generates or updates a project's CLAUDE.md or AGENTS.md context file from a codebase scan.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/dependency-update-bot"><code>dependency-update-bot</code></a></td>
+    <td>Scans your project for outdated npm, pip, Cargo, Go, or Ruby packages with upgrade recommendations.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/docs-from-code"><code>docs-from-code</code></a></td>
+    <td>Auto-generates and maintains README.md, API reference, and architecture docs from codebase analysis.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/explain-this-pr"><code>explain-this-pr</code></a></td>
+    <td>Takes a GitHub PR URL or current branch and writes a plain-English explanation, then posts it as a PR comment.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/kill-the-standup"><code>kill-the-standup</code></a></td>
+    <td>Reads Linear issues and GitHub commits, formats a standup update (done/doing/blockers), and posts to Slack.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/llms-txt-generator"><code>llms-txt-generator</code></a></td>
+    <td>Generates a standards-compliant llms.txt file — makes your site fully readable and citable by AI agents.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/pr-description-writer"><code>pr-description-writer</code></a></td>
+    <td>Writes, drafts, or updates a GitHub pull request description for the current branch.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+  <tr>
+    <td><a href="skills/schema-markup-generator"><code>schema-markup-generator</code></a></td>
+    <td>Generates JSON-LD structured data markup for any webpage to improve search visibility.</td>
+    <td><code>1.0.0</code></td>
+  </tr>
+</table>
 
-> **Note:** For some skills (like `position-me`), the `SKILL.md` file might be located inside a subfolder. Always make sure you are uploading the specific folder that contains the `SKILL.md` file!
+<!-- SKILLS_LIST_END -->
 
-## Step 1: View Available Skills
-
-To see the full list of available skills, open your terminal and run the following command:
-
-```bash
-npx "@opendirectory.dev/skills" list
-```
-
-This command will display a list of all skills currently available in the OpenDirectory registry.
-
-## Step 2: Choose Your Agent
-
-OpenDirectory supports several different AI agents. When you install a skill, you need to tell the system which agent you are using by using the `--target` flag.
-
-Supported agents include:
-
-*   **Claude Code**: Use `--target claude`
-*   **OpenCode**: Use `--target opencode`
-*   **Codex**: Use `--target codex`
-*   **Gemini CLI**: Use `--target gemini`
-*   **Anti-Gravity**: Use `--target anti-gravity`
-*   **OpenClaw**: Use `--target openclaw`
-*   **Hermes**: Use `--target hermes`
-
-## Step 3: Install a Skill
-
-Once you have found a skill you want to use, run the following command in your terminal, replacing `<skill-name>` with the name of the skill and `<your-agent>` with the agent you chose in Step 2:
-
-```bash
-npx "@opendirectory.dev/skills" install <skill-name> --target <your-agent>
-```
-
-This command installs the skill into your agent's global configuration directory, making it available across all your projects.
-
-## How to Use the Skills
-
-After the installation is complete, your AI agent is ready to use the new skill. Simply open your AI agent (such as Claude Code) within your project folder and give it a command related to the skill.
-
-For example, if you installed a skill for SEO analysis, you might say:
-"Use the SEO analysis skill to check the homepage of my website."
-
-## Why NPX?
-
-We use a tool called `npx` to manage these skills. This ensures that every time you run a command, you are automatically using the most recent version of the skill and the latest security updates. You never have to worry about manually updating your software.
+---
 
 ## How to Contribute
 
-We welcome contributions from the community. If you have built an innovative GTM, Technical Marketing, or growth automation skill, we encourage you to share it with the ecosystem.
+We welcome skills across GTM, growth automation, and developer tooling.
 
-Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines on the strict format required for new skills and our security validation process.
+> **Top contributors receive OpenDirectory swag.** Limited-edition merchandise shipped to you.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the required format and the security validation process.
+
+---
 
 ## Top Contributors
 
@@ -185,7 +536,9 @@ Please refer to [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines on th
   <img src="https://contrib.rocks/image?repo=Varnan-Tech/opendirectory" />
 </a>
 
-A massive thank you to everyone who has helped build the OpenDirectory ecosystem! Join us by checking out the [CONTRIBUTING.md](CONTRIBUTING.md) guide.
+Thank you to every contributor. See [CONTRIBUTING.md](CONTRIBUTING.md) to get involved.
+
+---
 
 ## License
 
