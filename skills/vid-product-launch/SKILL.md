@@ -65,7 +65,7 @@ No React. No AI video APIs. No Python. Zero runtime cost beyond Playwright + FFm
 | tagline | auto | 4–6 words — the product's core promise |
 | problem_statement | auto-inferred | 1 sentence for tease section (the pain the product solves) |
 | proof_stat | auto-inferred | Single metric (e.g. "500+ teams", "10× faster", "$2M saved") |
-| cta | auto | URL or action phrase (e.g. "gooseworks.ai", "Join the waitlist") |
+| cta | auto | URL or action phrase (e.g. "opendirectory.dev", "Join the waitlist") |
 | launch_date | — | ISO date string (enables countdown-card scene) |
 | tone | cinematic | cinematic / energetic / minimal / emotional |
 | duration | 60 | 30 / 60 / 90 (seconds) |
@@ -708,6 +708,6 @@ Checklist
 >
 > "Match tone to your market: cinematic for B2C premium / Series A+, energetic for dev tools and SaaS, minimal for design-forward products, emotional for consumer / mission-driven."
 >
-> ✅ Good: "Product launch video, 60 seconds. Product: Gooseworks. Description: AI workspace that automates research, content creation, and outreach for growth teams. Tagline: 'Work at AI speed.' Tone: minimal. Proof: '500+ growth teams, 10× output.' CTA: 'Join the waitlist at gooseworks.ai.' Aspect: 16:9."
+> Good: "Product launch video, 60 seconds. Product: OpenDirectory. Description: A library of pre-built AI agent skills for Claude, Codex, and Gemini. Covers GTM, content, research, and developer tools. Tagline: 'AI skills, ready to install.' Tone: minimal. Proof: '52+ skills, zero setup.' CTA: 'Browse skills at opendirectory.dev.' Aspect: 16:9."
 >
 > ❌ Bad: "launch video for our new product"

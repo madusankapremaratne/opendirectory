@@ -1,25 +1,40 @@
 # vid-product-launch
 
-Generate a cinematic product launch video — builds anticipation with narrative storytelling, a dramatic product reveal, and a clear CTA. Designed for announcement posts, email campaigns, landing page heroes, and launch day social content.
+Generate a cinematic product launch video from a product description and launch context. The video follows a 5-section narrative arc: build anticipation, reveal the product, prove the value, and close with a CTA.
 
-Different from a sizzle reel (which is pure energy) — a launch video has **narrative structure** and a specific **product reveal moment** everything else builds toward.
+This is different from a sizzle reel. A launch video has a specific reveal moment. Every section before it builds toward that moment.
+
+Use it for announcement posts, email campaigns, landing page heroes, and launch day social content.
 
 ---
 
 ## Install
 
 ```bash
-npx opendirectory add vid-product-launch
+npx "@opendirectory.dev/skills" install vid-product-launch --target claude
 ```
+
+### Step 1: Download the skill from GitHub
+1. Click the Code button on this repo's GitHub page.
+2. Select Download ZIP to download the repository.
+3. Extract the ZIP file on your computer.
+
+### Step 2: Install in Claude
+1. Open your Claude desktop app.
+2. Go to the sidebar and click Customize.
+3. Click the Skills tab, then click the + button.
+4. Choose Upload a skill and drag in the folder.
+
+Upload the folder that contains the `SKILL.md` file.
 
 ---
 
 ## How It Works
 
-1. Provide product details and launch context
-2. Agent generates a narrative script with reveal structure
-3. Agent produces a single HTML file using the `renderFrame(t)` architecture
-4. Export script captures frames via Playwright → assembles MP4 via FFmpeg
+1. Provide your product name, description, and launch context.
+2. The agent generates a narrative script with timed sections.
+3. The agent produces a single HTML file using the `renderFrame(t)` architecture.
+4. The export script captures frames via Playwright and assembles an MP4 via FFmpeg.
 
 No external AI video APIs. No API costs. Works offline.
 
@@ -29,13 +44,13 @@ No external AI video APIs. No API costs. Works offline.
 
 | Section | Timing (60s) | Content |
 |---------|-------------|---------|
-| **Tease** | 0–10s | The problem — without naming the product yet |
-| **Build** | 10–30s | Rising tension, hints at the solution |
-| **Reveal** | 30–45s | Product name + tagline + first look |
-| **Proof** | 45–55s | One key result or feature (not five) |
-| **CTA** | 55–60s | Launch offer or "available now" with URL |
+| Tease | 0-10s | The problem, without naming your product |
+| Build | 10-30s | Rising tension, hints at the solution |
+| Reveal | 30-45s | Product name, tagline, and first look |
+| Proof | 45-55s | One key result or feature |
+| CTA | 55-60s | Your URL or launch offer |
 
-Auto-scaled for 30s and 90s durations too.
+Timing scales automatically for 30s and 90s durations.
 
 ---
 
@@ -43,16 +58,16 @@ Auto-scaled for 30s and 90s durations too.
 
 | Parameter | Required | Default | Description |
 |-----------|----------|---------|-------------|
-| `product_name` | ✅ | — | Product or feature name |
-| `product_description` | ✅ | — | What it does and who it's for (2–3 sentences) |
-| `tagline` | — | auto | Key headline — 4–6 words (write this yourself) |
-| `launch_date` | — | — | ISO date for countdown timer (e.g. `2026-06-01`) |
-| `cta` | — | auto | Final CTA (e.g. `"Join the waitlist at gooseworks.ai"`) |
-| `tone` | — | `cinematic` | `cinematic` / `energetic` / `minimal` / `emotional` |
-| `duration` | — | `60` | `30` / `60` / `90` seconds |
-| `aspect_ratio` | — | `16:9` | `16:9` / `9:16` |
-| `letterbox` | — | `false` | 2.35:1 black bars (cinematic tone only) |
-| `music` | — | — | Path to audio file (mp3/m4a/wav) |
+| `product_name` | Yes | | Product or feature name |
+| `product_description` | Yes | | What it does and who it is for (2-3 sentences) |
+| `tagline` | | auto | Key headline, 4-6 words (write this yourself) |
+| `launch_date` | | | ISO date for countdown timer (e.g. `2026-06-01`) |
+| `cta` | | auto | Final CTA (e.g. `"Browse skills at opendirectory.dev"`) |
+| `tone` | | `cinematic` | `cinematic` / `energetic` / `minimal` / `emotional` |
+| `duration` | | `60` | `30` / `60` / `90` seconds |
+| `aspect_ratio` | | `16:9` | `16:9` / `9:16` |
+| `letterbox` | | `false` | 2.35:1 black bars (cinematic tone only) |
+| `music` | | | Path to audio file (mp3/m4a/wav) |
 
 ---
 
@@ -85,33 +100,33 @@ bash scripts/export-video.sh launch/my-product/product-launch.html --duration 60
 bash scripts/export-video.sh launch/my-product/product-launch.html --duration 60 --letterbox --width 1920 --height 1080
 ```
 
-**Output:** `launch/[slug]/product-launch.mp4` — 1080p H.264, compatible with QuickTime, iOS, Twitter, LinkedIn, Instagram.
+Output: `launch/[slug]/product-launch.mp4`. 1080p H.264, compatible with QuickTime, iOS, Twitter, LinkedIn, and Instagram.
 
 ---
 
 ## Prompt Tips
 
-**Write the tagline yourself.** The tagline is the product's entire promise in 4–6 words. Don't skip it — it's the most important text in the video.
+Write the tagline yourself. It is the product's entire promise in 4-6 words. The agent uses it as the centerpiece of the reveal moment.
 
-**The reveal moment is everything.** Everything before it builds tension. The reveal must feel earned.
+The reveal is everything. Everything before it creates tension. If the reveal does not feel earned, the video does not work.
 
-**One benefit in the proof section.** Trying to show 5 features kills launch video pacing.
+Put one stat in the proof section. Five stats kill the pacing. One oversized number creates the punch.
 
-**Match tone to your market.** Cinematic doesn't work for developer tools; minimal doesn't work for consumer apps.
+Match tone to your market. Cinematic does not work for developer tools. Minimal does not work for consumer apps.
 
 ---
 
 ## Prompt Examples
 
-✅ **Good:**
+Good:
 ```
-Product launch video, 60 seconds. Product: Gooseworks. Description: AI workspace that
-automates research, content creation, and outreach for growth teams. Tagline: "Work at
-AI speed." Tone: minimal. Proof: "500+ growth teams, 10x output." CTA: "Join the
-waitlist at gooseworks.ai." Music: ambient electronic build. Aspect ratio: 16:9.
+Product launch video, 60 seconds. Product: OpenDirectory. Description: A library
+of pre-built AI agent skills for Claude, Codex, and Gemini. Covers GTM, content,
+research, and developer tools. Tagline: "AI skills, ready to install." Tone: minimal.
+Proof: "52+ skills, zero setup." CTA: "Browse skills at opendirectory.dev." Aspect: 16:9.
 ```
 
-❌ **Bad:**
+Bad:
 ```
 launch video for our new product
 ```
@@ -127,7 +142,7 @@ launch/
     └── product-launch.mp4     (H.264, 1080p, yuv420p, faststart)
 ```
 
-Preview the HTML in any browser before exporting — it runs a live animation loop at full quality.
+Preview the HTML in any browser before exporting. It runs a live animation loop at full quality.
 
 ---
 
