@@ -59,7 +59,7 @@ No Runway. No Pika. No AI video APIs. Zero runtime cost beyond Node.js + FFmpeg.
 | tone | energetic | energetic / cinematic / emotional / professional |
 | music | none | File path, or BPM/genre string (e.g. "128bpm electronic") |
 | duration | 60 | 30 / 60 / 90 seconds |
-| aspect_ratio | 16:9 | 16:9 (1920x1080) / 9:16 (1080x1920) |
+| aspect_ratio | 9:16 | 9:16 (1080x1920) / 16:9 (1920x1080) |
 | cut_style | auto | fast (1-2s) / cinematic (3-5s) — auto derives from tone |
 | end_card | auto | Logo + tagline + CTA URL for Land section |
 
@@ -141,8 +141,8 @@ If unavailable, calculate from BPM: `beat_ms = 60000 / BPM`. Align cuts to every
 ```
 
 **6. Determine pixel dimensions:**
+- `9:16` → W=1080, H=1920 (default — Instagram Reels, TikTok, YouTube Shorts)
 - `16:9` → W=1920, H=1080
-- `9:16` → W=1080, H=1920
 
 ---
 
@@ -394,7 +394,7 @@ Good:
 Sizzle reel, 60 seconds. Tone: energetic. Key messages: ['AI skills, ready to install' /
 '52+ skills across GTM, content, research' / 'Works with Claude, Codex, Gemini' /
 'Zero setup. Instant value.']. Music: 128bpm electronic. Cut style: fast.
-End card: OpenDirectory + 'AI skills, ready to install' + 'opendirectory.dev'. Aspect: 16:9.
+End card: OpenDirectory + 'AI skills, ready to install' + 'opendirectory.dev'. Aspect: 9:16.
 ```
 
 Bad:
