@@ -3,6 +3,11 @@
   "version": "0.1.72",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "skills",
+    "registry.json"
+  ],
   "bin": {
     "opendirectory": "dist/index.js"
   },
