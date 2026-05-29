@@ -56,7 +56,7 @@ function detectCategoryFromContent(name: string, description: string): string {
   if (/^(vid-|graphic-|blog-cover-image)/.test(n)) return 'Visual & Media';
   if (/^(email-newsletter|cook-the-blog|noise2blog|human-tone|linkedin-post|tweet-thread|noise-to-linkedin|newsletter)/.test(n)) return 'Content';
   if (/^(producthunt|show-hn|oss-launch|brand-alchemy|product-update-logger)/.test(n)) return 'Launch';
-  if (/^(hackernews|reddit-icp|reddit-post|npm-downloads|yc-intent|twitter-gtm|sdk-adoption|gh-issue|map-your-market|competitor-pr|google-trends|meta-ads|meta-tribe)/.test(n)) return 'GTM Intelligence';
+  if (/^(hackernews|reddit-icp|reddit-post|npm-downloads|yc-intent|twitter-gtm|sdk-adoption|gh-issue|map-your-market|competitor-pr|google-trends|meta-ads|meta-tribe|company-radar)/.test(n)) return 'GTM Intelligence';
   if (/^(outreach-sequence|cold-email)/.test(n)) return 'Outreach';
   if (/^(pricing-|position-me|meeting-brief|linkedin-job-post|where-your-customer|vc-)/.test(n)) return 'Research';
   if (/^(kill-the-standup|dependency-update|docs-from-code|pr-description|explain-this-pr|claude-md|llms-txt|schema-markup)/.test(n)) return 'Developer Tools';
@@ -251,20 +251,28 @@ function updateReadme() {
 
     // Sync all hardcoded skill counts
     updatedContent = updatedContent.replace(
-      /\d+\+pre-built\+AI\+Agent\+Skills/,
+      /\d+\+pre-built\+AI\+Agent\+Skills/g,
       `${skills.length}+pre-built+AI+Agent+Skills`
     );
     updatedContent = updatedContent.replace(
-      /\/badge\/skills-\d+-blue/,
+      /\/badge\/skills-\d+-blue/g,
       `/badge/skills-${skills.length}-blue`
     );
     updatedContent = updatedContent.replace(
-      /Explore our growing library of \d+ specialized skills/,
+      /Explore our growing library of \d+ specialized skills/g,
       `Explore our growing library of ${skills.length} specialized skills`
     );
     updatedContent = updatedContent.replace(
-      /\d+ skills across GTM/,
+      /\d+ skills across GTM/g,
       `${skills.length} skills across GTM`
+    );
+    updatedContent = updatedContent.replace(
+      /lines=\d+\+Agent\+Skills/g,
+      `lines=${skills.length}+Agent+Skills`
+    );
+    updatedContent = updatedContent.replace(
+      /\d+ specialized skills across GTM/g,
+      `${skills.length} specialized skills across GTM`
     );
 
     fs.writeFileSync(README_PATH, updatedContent, 'utf-8');
