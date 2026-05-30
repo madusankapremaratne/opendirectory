@@ -231,6 +231,21 @@ If any check fails, fix and re-run that step.
 
 ---
 
+## Error handling
+
+These four failure modes get explicit handling — never let the skill silently produce a partial output without surfacing the cause.
+
+| Case | Behavior |
+|---|---|
+| `repo` doesn't exist OR can't be cloned OR can't be read | Exit immediately with the message `Repo not found or inaccessible: <repo>`. Do not write any output files. |
+| `README.md` is missing | Run anyway. Score `what_is_this_clarity`, `visual_proof`, `runnable_quick_start`, and `marketing_signals` near 0. Use the absence as the opening of the roast ("No README is its own statement"). |
+| Repo is private + no GitHub auth available | Try a local clone (`git clone <url>`); if it fails, exit with `Repo is private and no authentication is available`. Suggest the user set `GITHUB_TOKEN` or pass a local path. |
+| `compare_to` URL fails (network, 404, private, etc.) | Continue without the benchmark. Add a single line to the roast: `Note: requested benchmark against <compare_to> could not be fetched.` Omit the `Benchmark:` line from the terminal summary. |
+
+Any GitHub API error (rate limit, transient 5xx) during Step 2 metadata fetch is caught and logged in `score.json` under `trust_signals.evidence` as `"github metadata unavailable"`. The rest of the run proceeds.
+
+---
+
 ## Examples
 
 **Good invocation:**
